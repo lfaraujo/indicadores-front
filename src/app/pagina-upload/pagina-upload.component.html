@@ -1,0 +1,5 @@
+<p-fileUpload chooseIcon="pi pi-cloud-upload" chooseLabel="Importar arquivo" name="myfile[]" customUpload="true"
+      [auto]="true" (uploadHandler)="onUpload($event)"
+      accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      invalidFileTypeMessageSummary="Tipo de arquivo inválido! "
+      invalidFileTypeMessageDetail="Selecione apenas arquivos .xlsx"></p-fileUpload>

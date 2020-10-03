@@ -1,0 +1,80 @@
+<div class="container">
+    <p-table [value]="indicadores" styleClass="p-datatable-sm" [tableStyle]="{'table-layout':'auto'}" [paginator]="true"
+        [rows]="10" [showCurrentPageReport]="true" [responsive]="true"
+        currentPageReportTemplate="Exibindo {first} a {last} de {totalRecords} itens"
+        [rowsPerPageOptions]="[10,15,20,25,30]">
+        <ng-template pTemplate="caption">
+            Indicadores - {{mesReferencia}}
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Login</th>
+                <th>Nome</th>
+                <th>U.N.</th>
+                <th>Cidade</th>
+                <th>Classificação</th>
+                <th>Dias Escalados</th>
+                <th>Total Geral</th>
+                <th>Inst</th>
+                <th>Serv</th>
+                <th>Manut</th>
+                <th>Ret</th>
+                <th>Total</th>
+                <th>Média Ctt "Dias"</th>
+                <th>Total Quebra</th>
+                <th>% Quebra</th>
+                <th>Aderência</th>
+                <th>Tec1</th>
+                <th>% Execução Sobreposta</th>
+                <th>Altera Horário "Dias"</th>
+                <th>Uso PDA</th>
+                <th>WA</th>
+                <th>URA</th>
+                <th>Humano</th>
+                <th>1º Trabalho</th>
+                <th>% Desloc</th>
+                <th>Status Refeição</th>
+                <th>Foto App</th>
+                <th>Técnico Certificado IN</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-indicador>
+            <tr>
+                <td>{{indicador.funcionario.login == null ? '-' : indicador.funcionario.login}}</td>
+                <td>{{indicador.funcionario.nomeTecnico == null ? '-' : indicador.funcionario.nomeTecnico}}</td>
+                <td>{{indicador.funcionario.unidadeNegocio == null ? '-' : indicador.funcionario.unidadeNegocio}}</td>
+                <td>{{indicador.funcionario.cidade == null ? '-' : indicador.funcionario.cidade}}</td>
+                <td>{{indicador.producao.pctMesReferencia == null ? '-' : indicador.producao.pctMesReferencia}}</td>
+                <td>{{indicador.producao.diasEscalados == null ? '-' : indicador.producao.diasEscalados}}</td>
+                <td>{{indicador.producao.totalGeral == null ? '-' : indicador.producao.totalGeral}}</td>
+                <td>{{indicador.producao.instalacoes == null ? '-' : indicador.producao.instalacoes}}</td>
+                <td>{{indicador.producao.servicos == null ? '-' : indicador.producao.servicos}}</td>
+                <td>{{indicador.producao.manutencoes == null ? '-' : indicador.producao.manutencoes}}</td>
+                <td>{{indicador.producao.retornos == null ? '-' : indicador.producao.retornos}}</td>
+                <td>{{indicador.producao.total == null ? '-' : indicador.producao.total}}</td>
+                <td>{{indicador.producao.mediaCttDias == null ? '-' : indicador.producao.mediaCttDias}}</td>
+                <td>{{indicador.quebra.totalQuebra == null ? '-' : indicador.quebra.totalQuebra}}</td>
+                <td>{{indicador.quebra.pctQuebra == null ? '-' : indicador.quebra.pctQuebra}}</td>
+                <td>{{indicador.quebra.pctAderencia == null ? '-' : indicador.quebra.pctAderencia}}</td>
+                <td>{{indicador.cumprimentoAgenda.tec1 == null ? '-' : indicador.cumprimentoAgenda.tec1}}</td>
+                <td>{{indicador.cumprimentoAgenda.pctExecucaoSobreposta == null ? '-' : indicador.cumprimentoAgenda.pctExecucaoSobreposta}}
+                </td>
+                <td>{{indicador.cumprimentoAgenda.alteraHorarioDias == null ? '-' : indicador.cumprimentoAgenda.alteraHorarioDias}}
+                </td>
+                <td>{{indicador.baixa.usoPda == null ? '-' : indicador.baixa.usoPda ? 'Sim' : 'Não'}}</td>
+                <td>{{indicador.baixa.pctWa == null ? '-' : indicador.baixa.pctWa}}</td>
+                <td>{{indicador.baixa.pctUra == null ? '-' : indicador.baixa.pctUra}}</td>
+                <td>{{indicador.baixa.pctHumano == null ? '-' : indicador.baixa.pctHumano}}</td>
+                <td>{{indicador.atualizacaoStatusWa.primeiroTrabalho == null ? '-' : indicador.atualizacaoStatusWa.primeiroTrabalho}}
+                </td>
+                <td>{{indicador.atualizacaoStatusWa.pctDeslocamento == null ? '-' : indicador.atualizacaoStatusWa.pctDeslocamento}}
+                </td>
+                <td>{{indicador.atualizacaoStatusWa.pctStatusRefeicao == null ? '-' : indicador.atualizacaoStatusWa.pctStatusRefeicao}}
+                </td>
+                <td>{{indicador.funcionario.fotoApp == null ? '-' : indicador.funcionario.fotoApp ? 'Sim' : 'Não'}}</td>
+                <td>{{indicador.funcionario.certificadoIn == null ? '-' : indicador.funcionario.certificadoIn ? 'Sim' : 'Não'}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
